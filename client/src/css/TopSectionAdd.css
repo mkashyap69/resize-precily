@@ -1,0 +1,80 @@
+.container--flex-2 {
+  margin: 2rem;
+  width: 60vw;
+  height: 33vh;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip--card-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.container--flex-2 button:first-child {
+  padding-block: clamp(0.6rem, 1.5vw, 1.5rem);
+  padding-inline: clamp(1.5rem, 3vw, 3rem);
+  border-radius: 0.4rem;
+  border: 1px solid var(--primary-color);
+  background-color: var(--accent-color);
+  color: black;
+  font-size: clamp(0.6rem, 1.5vw, 1.5rem);
+}
+
+.container--flex-2:hover .flip--card-content {
+  transform: rotateY(180deg);
+}
+
+.flip--card-front,
+.flip--card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip--card-back {
+  color: var(--primary-color);
+  transform: rotateY(180deg);
+}
+
+.flip--card-back input {
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  padding-block: clamp(0.6rem, 1vw, 1rem);
+  padding-inline: clamp(1.5rem, 3vw, 3rem);
+}
+
+.flip--card-add {
+  padding-block: clamp(0.4rem, 0.7vw, 0.7rem);
+  padding-inline: clamp(1.5rem, 3vw, 3rem);
+  border-radius: 0.4rem;
+  border: 1px solid var(--primary-color);
+  background-color: var(--accent-color);
+  color: black;
+  font-size: clamp(0.6rem, 1.5vw, 1.5rem);
+  margin-top: 3rem;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.flip--card-add:hover {
+  transform: scale(0.97);
+}
